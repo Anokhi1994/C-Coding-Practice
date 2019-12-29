@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.2.3)
+project(ComprLL LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_subdirectory(RequiredFiles)
+
+#add_library(Studentcpp Student.cpp )
+add_executable(comprLL main.cpp)
+target_link_libraries(comprLL ReqLib)
