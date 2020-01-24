@@ -6,12 +6,11 @@
 
 int main(){
 
-	RegularEmployee* John;
-	John->approve_item("Dog", 500);
-	RegularEmployee* Celik;
+	RegularEmployee* John = new RegularEmployee;
+	John->approve_item("Dog", 1000);
+	RegularEmployee* Celik = new RegularEmployee;
 	John->set_manager(Celik);
-
-
+	Celik->approve_item("Bed", 5000);
 
 
 

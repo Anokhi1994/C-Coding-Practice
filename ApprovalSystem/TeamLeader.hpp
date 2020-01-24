@@ -7,6 +7,11 @@ private:
 	const int limit_ = 10000;
 	const Position pos = Position::Team_Leader;
 public:
+
+	TeamLeader() = default;
+
+
+
 	virtual int getLimit() const noexcept override {
 		return limit_;
 	}
@@ -20,9 +25,11 @@ public:
 			std::cout << "Approved";
 		}
 		else {
-			std::cout << "To be approved by TeamLeader";
+			std::cout << "To be approved by TeamManager";
 		}
 
 	}
+
+	~TeamLeader(){}
 };
 #endif

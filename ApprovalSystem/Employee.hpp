@@ -20,6 +20,6 @@ public:
 
 	virtual void approve_item(const std::string& itemName, const int price) = 0;
 
-	virtual ~Employee();
+	virtual ~Employee(){};
 };
 #endif

@@ -7,14 +7,17 @@ class RegularEmployee : public TeamLeader{
 		const int limit_ = 1000;
 		const Position pos = Position::Regular_employee;
 	public:
+		RegularEmployee() = default;
+
 		virtual int getLimit() const noexcept override {
 			return limit_;
 		}
 
 		virtual void set_manager(Employee* employee) noexcept override {
-			TeamLeader* teamLead;
+
 			if(employee){
-			employee = teamLead;
+			employee = new TeamLeader;
+			std::cout << "From inside reg emp " << employee->getLimit() << "\n";
 			}
 
 		}
@@ -28,5 +31,7 @@ class RegularEmployee : public TeamLeader{
 			}
 
 		}
+
+		~RegularEmployee(){};
 };
 #endif
