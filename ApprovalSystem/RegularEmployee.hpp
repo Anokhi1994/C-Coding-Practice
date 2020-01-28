@@ -6,6 +6,7 @@ class RegularEmployee : public TeamLeader{
 	private:
 		const int limit_ = 1000;
 		const Position pos = Position::Regular_employee;
+		TeamLeader* teamLead;
 	public:
 		RegularEmployee() = default;
 
@@ -16,7 +17,7 @@ class RegularEmployee : public TeamLeader{
 		virtual void set_manager(Employee* employee) noexcept override {
 
 			if(employee){
-			employee = new TeamLeader;
+			employee = teamLead;
 			std::cout << "From inside reg emp " << employee->getLimit() << "\n";
 			}
 
@@ -24,10 +25,14 @@ class RegularEmployee : public TeamLeader{
 
 		virtual void approve_item(const std::string& itemName, const int price) override {
 			if(price <= limit_){
-				std::cout << "Approved";
+				std::cout << "Approved\n";
 			}
 			else {
-				std::cout << "To be approved by TeamLeader";
+				std::cout << "To be approved by TeamLeader\n";
+				if(teamLead){
+					teamLead->approve_item(itemName, price);
+
+				}
 			}
 
 		}

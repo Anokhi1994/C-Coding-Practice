@@ -10,7 +10,7 @@ int main(){
 	John->approve_item("Dog", 1000);
 	RegularEmployee* Celik = new RegularEmployee;
 	John->set_manager(Celik);
-	Celik->approve_item("Bed", 5000);
+	John->approve_item("Bed", 5000);
 
 
 
